@@ -1,0 +1,27 @@
+<div fxlayout="column" style="background: white;">
+  <mat-card fxFlex>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-subtitle>Enter user and pass</mat-card-subtitle>
+    </mat-card-header>
+    <form  (ngSubmit)="onSubmit()" #myForm="ngForm">
+      
+      <mat-card-content>        
+        <mat-form-field>
+          <input matInput placeholder="Enter your user" id="username" [(ngModel)]="user.username" name="username">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" id="password" [(ngModel)]="user.password" name="password">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </mat-form-field>              
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-button type="submit">OK</button>
+        <button mat-button type="reset">RESET</button>
+      </mat-card-actions>
+    
+    </form>
+  </mat-card>
+</div>

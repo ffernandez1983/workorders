@@ -1,0 +1,20 @@
+<div>
+  <form>
+    <!--Clientes-->
+    <mat-form-field>
+      <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="CIF" [(ngModel)]="client.CIF">
+    </mat-form-field>
+    <!--/Clientes-->
+
+
+  </form>
+</div>
